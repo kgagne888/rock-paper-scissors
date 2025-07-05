@@ -14,4 +14,11 @@ function getComputerChoice() {
 
 }
 
-console.log(getComputerChoice())
+console.log(getComputerChoice());
+
+function getHumanChoice() {
+    let choice = prompt("Rock, Paper, or Scissors").toLowerCase();
+    return choice; 
+}
+
+console.log(getHumanChoice());

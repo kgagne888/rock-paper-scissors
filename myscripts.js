@@ -3,11 +3,11 @@ function getComputerChoice() {
     let choice; 
 
     if (r <= 1) {
-        choice = 'Rock';
+        choice = 'rock';
     } else if (r <= 2) {
-        choice = 'Paper';
+        choice = 'paper';
     } else {
-        choice = 'Scissors';
+        choice = 'scissors';
     }
 
     return choice;
@@ -21,3 +21,23 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    let winners = {
+        'rock': 'paper', 
+        'paper': 'scissors', 
+        'scissors': 'rock'
+    }
+
+    if (humanChoice == computerChoice) {
+        console.log('Its a tie!');
+    } else if (winners[humanChoice] == computerChoice) {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        ++computerScore;
+    } else {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        ++humanScore;
+    }
+}
+
+playRound(getHumanChoice(), getComputerChoice())

@@ -42,16 +42,14 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
-        let roundWinner = playRound(getHumanChoice(), getComputerChoice());
-        switch(roundWinner) {
-            case 'human': 
-                ++humanScore;
-                break;
-            case 'computer':
-                ++computerScore;
-                break;
-        }
+    let roundWinner = playRound(getHumanChoice(), getComputerChoice());
+    switch(roundWinner) {
+        case 'human': 
+            ++humanScore;
+            break;
+        case 'computer':
+            ++computerScore;
+            break;
     }
 
     let winner; 
